@@ -11,8 +11,7 @@ def home(request):
              """
 
     return HttpResponse(text)
-
-    def view_restaurant(request, id_restaurant):
+def view_restaurant(request, id_restaurant):
 
     """
 
@@ -25,27 +24,15 @@ def home(request):
     """
 
     return HttpResponse(
-
         "Vous avez demandé l'article #{0} !".format(id_restaurant)
-
     )
-
 from datetime import datetime
-
-
-
 from django.shortcuts import render
-def date_actuelle(request):
 
+def date_actuelle(request):
     return render(request, 'gestionrestaurant/date.html', {'date': datetime.now()})
 
-
-
 def addition(request, nombre1, nombre2):
-
     total = int(nombre1) + int(nombre2)
-
-
     # Retourne nombre1, nombre2 et la somme des deux au tpl
-
     return render(request, 'gestionrestaurant/addition.html', locals())
